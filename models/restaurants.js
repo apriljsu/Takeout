@@ -4,7 +4,8 @@ const restaurantSchema = new mongoose.Schema({
   cuisine:{type:String,required:true},
   rating:{type:Number,required:true},
   favDishes:[],
-  isNewRestaurant:Boolean
+  isNewRestaurant:Boolean,
+  img:String
 })
 const Restaurant = mongoose.model('Restaurant',restaurantSchema)
 module.exports = Restaurant;
