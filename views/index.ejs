@@ -1,11 +1,29 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Index</title>
-  </head>
+<%- include('./partials/header.ejs') %>
   <body>
  <h1>Welcome to Takeout</h1>
- 
+ <h3>Italian</h3>
+   <ul>
+  <%for (let i=0;i<restaurants.length;i++){%>
+    <%if(restaurants[i].cuisine.toLowerCase() ==='italian'){%>
+    <li>
+      <a href="/restaurants/<%=restaurants[i].id%>">
+      <%=restaurants[i].name%>
+      </a>
+    </li>
+    <%}%>
+      <%}%>
+  </ul>
+  <h3>Thai</h3>
+  <ul>
+ <%for (let i=0;i<restaurants.length;i++){%>
+   <%if(restaurants[i].cuisine.toLowerCase()==='thai'){%>
+   <li>
+     <a href="/restaurants/<%=restaurants[i].id%>">
+     <%=restaurants[i].name%>
+     </a>
+   </li>
+   <%}%>
+ <%}%>
+ </ul>
   </body>
 </html>

@@ -1,0 +1,33 @@
+<%- include('./partials/header.ejs') %>
+  <body>
+    <h1>Edit Restaurant</h1>
+    <form action="/restaurants/<%=restaurant.id%>?_method=PUT" method="POST">
+        <fieldset>
+          <label for="cuisine">Cuisine:</label>
+          <input type="text" name="cuisine" id="cuisine" value="<%=restaurant.cuisine%>">
+        </fieldset>
+        <fieldset>
+           <label for="name">Restaurant Name</label>
+           <input type="text" name="name" id="name" value="<%=restaurant.name%>">
+        </fieldset>
+        <fieldset>
+           <label for="rating">Restaurant Rating</label>
+           <input type="number" name="rating" id="rating" value="<%=restaurant.rating%>">
+        </fieldset>
+        <fieldset>
+           <label for="favDishes">Favorite Dishes</label>
+           <input type="text" name="favDishes[]" id="favDishes" value="<%=restaurant.favDishes%>">
+        </fieldset>
+        <fieldset>
+           <label for="isNewRestaurant">Is this a new restaurant</label>
+           <input type="checkbox" name="isNewRestaurant" id="isNewRestaurant" value="<%=restaurant.isNewRestaurant%>">
+        </fieldset>
+        <fieldset>
+           <label for="img">Img Link</label>
+           <input type="text" name="img" id="img" value="<%=restaurant.img%>">
+        </fieldset>
+        <input type="submit" name="submit" value="submit">
+    </form>
+
+  </body>
+</html>
