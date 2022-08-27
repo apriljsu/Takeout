@@ -30,7 +30,7 @@ mongoose.connection.once('open',()=>{
   console.log('connected to mongo',mongodbURI)
 })
 //middleware
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/public'))
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'))
