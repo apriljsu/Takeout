@@ -3,8 +3,7 @@ const restaurantSchema = new mongoose.Schema({
   cuisine:{type:String,required:true},
   name:{type:String, required:true},
   rating:{type:Number,required:true},
-  favDishes:[],
-  isNewRestaurant:Boolean,
+  favDish:String,
   img:String
 })
 const Restaurant = mongoose.model('Restaurant',restaurantSchema)

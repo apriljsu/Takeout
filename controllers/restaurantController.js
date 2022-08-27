@@ -2,14 +2,14 @@ const express = require ('express')
 const router = express.Router()
 const Restaurant = require ('../models/restaurants.js')
 //custom middleware to require authentication
-const authRequired = (req, res, next) =>{
-  if(req.session.currentUser){
-    next()
-  }else{
-    res.send('You must be logged in to do that!')
-    res.redirect('/users/signin')
-  }
-}
+// const authRequired = (req, res, next) =>{
+//   if(req.session.currentUser){
+//     next()
+//   }else{
+//     res.send('You must be logged in to do that!')
+//     res.redirect('/users/signin')
+//   }
+// }
 
 //index
 router.get('/',async (req,res)=>{
@@ -29,12 +29,7 @@ router.get('/:id',async(req,res)=>{
 })
 //create
 router.post('/',(req,res)=>{
-  if(req.body.isNewRestaurant === 'on'){
-    req.body.isNewRestaurant = true;
-  }else{
-    req.body.isNewRestaurant = false;
-  }
-  Restaurant.create(req.body,(err,createdRestaurant)=>{
+    Restaurant.create(req.body,(err,createdRestaurant)=>{
     if(err){
       console.log('error',err)
     }
@@ -51,19 +46,14 @@ router.delete('/:id',(req,res)=>{
   })
 })
 //edit
-router.get('/:id/edit',authRequired,(req,res)=>{
+router.get('/:id/edit',(req,res)=>{
   Restaurant.findById(req.params.id,(err,foundRestaurant)=>{
     res.render('edit.ejs',{restaurant:foundRestaurant})
   })
 })
 //update
 router.put('/:id',(req,res)=>{
-  if(req.body.isNewRestaurant === 'on'){
-    req.body.isNewRestaurant = true;
-  }else{
-    req.body.isNewRestaurant = false;
-  }
-  Restaurant.findByIdAndUpdate(req.params.id,req.body,{new:true},(err,updatedModel)=>{
+    Restaurant.findByIdAndUpdate(req.params.id,req.body,{new:true},(err,updatedModel)=>{
     res.redirect("/restaurants")
   })
 })

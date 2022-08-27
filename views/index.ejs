@@ -25,5 +25,65 @@
    <%}%>
  <%}%>
  </ul>
+ <h3>Japanese</h3>
+ <ul>
+<%for (let i=0;i<restaurants.length;i++){%>
+  <%if(restaurants[i].cuisine.toLowerCase()==='japanese'){%>
+  <li>
+    <a href="/restaurants/<%=restaurants[i].id%>">
+    <%=restaurants[i].name%>
+    </a>
+  </li>
+  <%}%>
+<%}%>
+</ul>
+<h3>Chinese</h3>
+<ul>
+<%for (let i=0;i<restaurants.length;i++){%>
+ <%if(restaurants[i].cuisine.toLowerCase()==='chinese'){%>
+ <li>
+   <a href="/restaurants/<%=restaurants[i].id%>">
+   <%=restaurants[i].name%>
+   </a>
+ </li>
+ <%}%>
+<%}%>
+</ul>
+<h3>American</h3>
+<ul>
+<%for (let i=0;i<restaurants.length;i++){%>
+ <%if(restaurants[i].cuisine.toLowerCase()==='american'){%>
+ <li>
+   <a href="/restaurants/<%=restaurants[i].id%>">
+   <%=restaurants[i].name%>
+   </a>
+ </li>
+ <%}%>
+<%}%>
+</ul>
+<h3>Soul</h3>
+<ul>
+<%for (let i=0;i<restaurants.length;i++){%>
+ <%if(restaurants[i].cuisine.toLowerCase()==='soul'){%>
+ <li>
+   <a href="/restaurants/<%=restaurants[i].id%>">
+   <%=restaurants[i].name%>
+   </a>
+ </li>
+ <%}%>
+<%}%>
+</ul>
+<h3>Thai</h3>
+<ul>
+<%for (let i=0;i<restaurants.length;i++){%>
+ <%if(restaurants[i].cuisine.toLowerCase()==='mediterranean'){%>
+ <li>
+   <a href="/restaurants/<%=restaurants[i].id%>">
+   <%=restaurants[i].name%>
+   </a>
+ </li>
+ <%}%>
+<%}%>
+</ul>
   </body>
 </html>

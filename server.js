@@ -27,7 +27,7 @@ const mongoose = require('mongoose');
 const mongodbURI = process.env.MONGODBURI
 mongoose.connect(mongodbURI);
 mongoose.connection.once('open',()=>{
-  console.log('connected to mongo')
+  console.log('connected to mongo',mongodbURI)
 })
 //middleware
 app.use(express.json());
