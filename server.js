@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express');
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT ||3000
 app.listen(port,()=>{
   console.log('server is running on',port);
 })
@@ -30,6 +30,7 @@ mongoose.connection.once('open',()=>{
   console.log('connected to mongo',mongodbURI)
 })
 //middleware
+app.use(express.static('public'))
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'))

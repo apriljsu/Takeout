@@ -1,9 +1,16 @@
 <%- include('./partials/header.ejs') %>
+<nav>
+  <a href="/restaurants">List of restaurants</a>
+  |
+  <a href="/restaurants/new">Add a new restaurant</a>
+  |
+  <a href="/users/signout">Sign Out</a>
+</nav>
+
   <body>
-    <h1>This is the show page for <%=restaurant.name%></h1>
+    <h1><%=restaurant.name%></h1>
     <ul>
       <li>
-        Restaurant Name: <%=restaurant.name%><br>
         Rating: <%=restaurant.rating%><br>
         Favorite Dish: <%=restaurant.favDish%><br>
         <img src=<%=restaurant.img%> alt="restaurant img">
