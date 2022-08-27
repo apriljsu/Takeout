@@ -1,6 +1,5 @@
 body{
   text-align:center;
-  background-color: pink;
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDTg25-_-mzt-GVLGIFQuj4UL8RZU6HWRhYA&usqp=CAU');
   height:100%;
   background-position: center;
@@ -55,4 +54,14 @@ h3{
 }
 a{
   color:black;
+}
+fieldset{
+  display: inline-block;
+  /* border-color: orange;
+  border-radius: 2px;
+  border-style: solid; */
+}
+img{
+  width: 400px;
+  height: auto;
 }
