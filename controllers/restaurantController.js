@@ -1,6 +1,16 @@
 const express = require ('express')
 const router = express.Router()
 const Restaurant = require ('../models/restaurants.js')
+//custom middleware to require authentication
+const authRequired = (req, res, next) =>{
+  if(req.session.currentUser){
+    next()
+  }else{
+    res.send('You must be logged in to do that!')
+    res.redirect('/users/signin')
+  }
+}
+
 //index
 router.get('/',async (req,res)=>{
   let restaurants = await Restaurant.find({});
@@ -41,7 +51,7 @@ router.delete('/:id',(req,res)=>{
   })
 })
 //edit
-router.get('/:id/edit',(req,res)=>{
+router.get('/:id/edit',authRequired,(req,res)=>{
   Restaurant.findById(req.params.id,(err,foundRestaurant)=>{
     res.render('edit.ejs',{restaurant:foundRestaurant})
   })

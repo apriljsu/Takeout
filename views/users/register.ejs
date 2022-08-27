@@ -1,0 +1,16 @@
+<%- include('../partials/header.ejs') %>
+  <body>
+    <h1>Register A New User</h1>
+    <form action="/users/register" method="POST">
+      <fieldset>
+        <label for="username">Username:</label>
+        <input type="text" name="username">
+      </fieldset>
+      <fieldset>
+        <label for="password">Password:</label>
+        <input type="password" name="password" value="">
+      </fieldset>
+      <input type="submit" name="" value="Sign Up">
+    </form>
+  </body>
+</html>
