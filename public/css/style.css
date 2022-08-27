@@ -3,7 +3,6 @@ body {
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDTg25-_-mzt-GVLGIFQuj4UL8RZU6HWRhYA&usqp=CAU');
   height:100%;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
 }
 .mainbox{
@@ -62,6 +61,6 @@ fieldset{
   border-style: solid; */
 }
 img{
-  width: 400px;
+  width: 300px;
   height: auto;
 }
